@@ -31,6 +31,7 @@ In simple terms, a closure is like a backpack that an inner function carries wit
 
 # function along with its lexical scope bundle together form a `closure`.
 
+### Example 1:
 ```js
 function x() {
   var a = 7;
@@ -45,6 +46,22 @@ console.log(z);
 //.....
 
 z();
+```
+### Example 2:
+```js
+function outer(x) {
+  let y = 10;
+
+  function inner() {
+    console.log(x + y);
+  }
+
+  return inner;
+}
+
+const fn = outer(5); 
+fn(); 
+
 ```
 
 This code is a great example of two important concepts in JavaScript: **lexical scoping** and **closures**.
@@ -90,6 +107,75 @@ This code is a great example of **lexical scoping** and **closures** in JavaScri
    Here, `z` is invoked, which then invokes `x`, which then invokes `y`. Even though each function finishes executing after it's invoked, any function that's defined inside another function retains access to its parent function's variables. So when `y` is invoked, it still has access to `x`'s variable `a` and `z`'s variable `b`. This is a closure - `y` is a function that encapsulates its own scope, `x`'s scope, and `z`'s scope, and can access variables from all three.
 
 So when you call `z()`, it's like calling `x()`, and then `y()`. And because of closures and lexical scoping, `y` can still access the variables `a` and `b` from `x`'s and `z`'s scopes, respectively, even though `x` and `z` have finished executing. That's why it logs `7` and `900` to the console.
+
+### First, the. Outer function return the inner function, then the inner function invoked. Or the inner function invoked in between.
+
+Excellent question 🙌 — this is the exact point where many learners get confused.
+Let’s compare **two cases**:
+
+---
+
+## **Case 1: Outer returns inner, then we call inner later**
+
+```js
+function outer(x) {
+  let y = 10;
+
+  function inner() {
+    console.log(x + y);
+  }
+
+  return inner; // 👈 returning inner
+}
+
+const fn = outer(5); // outer runs once
+fn(); // inner runs later
+```
+
+👉 Flow:
+
+1. `outer(5)` is called → it creates `x=5`, `y=10`, defines `inner`.
+2. Instead of running `inner`, it **returns** it.
+3. Now `fn` points to `inner`, which still has access to `x` and `y`.
+4. When we call `fn()`, the closure works and logs `15`.
+
+* **Important:** This is the classic **closure example** because outer has already finished, but inner still remembers its variables.
+
+---
+
+## **Case 2: Inner is invoked inside outer**
+
+```js
+function outer(x) {
+  let y = 10;
+
+  function inner() {
+    console.log(x + y);
+  }
+
+  inner(); // 👈 directly calling inner here
+}
+
+outer(5);
+```
+
+👉 Flow:
+
+1. `outer(5)` is called.
+2. Inside outer, we immediately call `inner()`.
+3. At this moment, outer is still running, so inner can access `x` and `y`.
+4. Logs `15`.
+
+* **Important:** This is **not closure in action** because `outer` hasn’t finished yet. Inner just uses the normal scope chain while outer is active.
+
+---
+
+## ✅ Difference in one line
+
+* **Case 1 (return inner, then call later):** Closure → inner uses outer’s variables **after outer has finished**.
+* **Case 2 (call inner inside outer):** Normal scope → inner uses outer’s variables **while outer is still running**.
+
+
 
 
 ![UseofClosure](02.png)

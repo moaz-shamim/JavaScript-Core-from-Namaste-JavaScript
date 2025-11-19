@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Counter</title>
+</head>
+<body>
+
+    <h2>Click anywhere on the page to increase the counter</h2>
+    <div> You've clicked 
+        <span id="spnCount">0</span> times!
+    </div>
+
+    <script>
+        // Self-invoking function to create a private counter
+        var updateClickCount = (function(){
+            var counter = 0; // Private counter variable
+
+            return function(){
+                ++counter; // Increase the counter
+                document.getElementById("spnCount").innerHTML = counter; // Update the span text
+            };
+        })();
+
+        // Add event listener to the whole page
+        document.addEventListener("click", updateClickCount);
+    </script>
+
+</body>
+</html>

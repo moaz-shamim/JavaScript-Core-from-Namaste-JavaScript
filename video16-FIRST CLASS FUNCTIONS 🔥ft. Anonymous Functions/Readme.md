@@ -373,7 +373,7 @@ https://www.scaler.com/topics/callback-function-in-javascript/
 
 In JavaScript, functions are objects. Can we pass objects to functions as parameters? Yes.
 
-_A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action._
+_A callback function in javascript is a function that is passed as an argument in another function. Which is then called inside the parent function to complete a routine or an action._
 
 So, we can also pass functions as parameters to other functions and call them inside the outer functions. Sounds complicated? Let me show that in an example below:
 
@@ -387,7 +387,7 @@ The `print()` function takes another function as a parameter and calls it inside
 
 ## Why do we need Callback Functions?
 
-JavaScript runs code sequentially in top-down order. However, there are some cases that code runs (or must run) after something else happens and also not sequentially. This is called asynchronous programming.
+Javascript is a single-threaded language, which means, it executes the code sequentially one line after another. However, there are some cases in which a part of the code will only run after some lines of code, i.e. it is dependent on another function. This is called asynchronous programming.
 
 Callbacks make sure that a function is not going to run before a task is completed but will run right after the task has completed. It helps us develop asynchronous JavaScript code and keeps us safe from problems and errors.
 

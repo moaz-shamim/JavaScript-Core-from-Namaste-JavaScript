@@ -68,7 +68,13 @@ This process allows each function call to have its own private space to execute 
 
 ### Q.What is Hoisting in javaScript ?
 
+**General Definition**
 - Hoisting is the phenomenon in JavaScript by which we can access variables and functions even before we initialize them.
+
+**Formal Definition**
+- Hoisting is a JavaScript mechanism where variable and function declarations are moved ("hoisted") to the top of their containing scope during the compilation phase.
+
+.
 
 ```javascript
 hoistedFunction(); // Outputs: "Hello, I have been hoisted!"

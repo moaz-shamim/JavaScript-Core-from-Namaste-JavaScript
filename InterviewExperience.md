@@ -1,0 +1,2 @@
+[SDE-2 Frontend Position at Zepto](https://blog.stackademic.com/my-interview-experience-for-an-sde-2-frontend-position-at-zepto-and-advanced-javascript-coding-cd6792e74516)
+[JavaScript Array Interview Questions](https://medium.com/@vitaliykorzenkoua/javascript-array-interview-questions-a7d118b7356e)

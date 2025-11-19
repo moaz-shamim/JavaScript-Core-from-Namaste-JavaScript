@@ -15,16 +15,6 @@ console.log("While expires");
 
 let's break down the execution of this JavaScript code in terms of the JavaScript runtime environment:
 
-1. **Call Stack**: The call stack is a data structure that keeps track of where we are in the program¹²³⁴. It runs in a last-in, first-out way¹²³⁴.
-
-2. **Web APIs**: These are built-in libraries that can be accessed by your JavaScript code¹²³⁴. They provide various features that can be used in a web application¹²³⁴.
-
-3. **Callback Queue**: This is a data structure that stores all the callback functions that are ready to be executed¹²³⁴.
-
-4. **Event Loop**: The event loop takes functions from the callback queue and pushes them onto the call stack when the call stack is empty¹²³⁴.
-
-Now, let's see how these components interact during the execution of your code:
-
 1. When the JavaScript engine starts executing your code, it first encounters the `console.log("Start")` statement. This is pushed onto the call stack and executed immediately, logging "Start" to the console¹²³⁴.
 
 2. Next, it encounters the `setTimeout` function. This function is part of the Web APIs provided by the browser¹²³⁴. The callback function `cb` and the delay of `5000` milliseconds are passed to the `setTimeout` function and it starts the timer¹²³⁴.
@@ -62,15 +52,6 @@ setTimeout(function cb() {
 console.log("End");
 ```
 
-let's break down the execution of this JavaScript code in terms of the JavaScript runtime environment:
-
-1. **Call Stack**: The call stack is a data structure that keeps track of where we are in the program¹²³⁴. It runs in a last-in, first-out way¹²³⁴.
-
-2. **Web APIs**: These are built-in libraries that can be accessed by your JavaScript code¹²³⁴. They provide various features that can be used in a web application¹²³⁴.
-
-3. **Callback Queue**: This is a data structure that stores all the callback functions that are ready to be executed¹²³⁴.
-
-4. **Event Loop**: The event loop takes functions from the callback queue and pushes them onto the call stack when the call stack is empty¹²³⁴.
 
 Now, let's see how these components interact during the execution of your code:
 

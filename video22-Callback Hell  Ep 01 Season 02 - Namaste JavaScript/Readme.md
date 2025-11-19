@@ -1,8 +1,40 @@
 # What is Callback Hell?
 
-Callback hell occurs when there are multiple nested callbacks, making the code look complex, difficult to read, and hard to maintain. When functions depend on other asynchronous operations and are nested inside each other like layers, it results in a deeply indented "pyramid-like" shape.
+The phenomenon which happens when we nest multiple callbacks within a function is called a callback hell. The shape of the resulting code structure resembles a pyramid and hence callback hell is also called the “pyramid of the doom”. It makes the code very difficult to understand and maintain.
 
 ### Let's take an Example:
+
+```js
+function asyncFunction1(callback) {
+  setTimeout(() => {
+    console.log("Async Function 1 Done");
+    callback();
+  }, 1000);
+}
+
+function asyncFunction2(callback) {
+  setTimeout(() => {
+    console.log("Async Function 2 Done");
+    callback();
+  }, 1000);
+}
+
+function asyncFunction3(callback) {
+  setTimeout(() => {
+    console.log("Async Function 3 Done");
+    callback();
+  }, 1000);
+}
+
+
+asyncFunction1(() => {
+  asyncFunction2(() => {
+    asyncFunction3(() => {
+      console.log("All Async Functions Completed");
+    });
+  });
+});
+```
 
 ```js
 const cart = ["shoes", "pants", "kurta"];

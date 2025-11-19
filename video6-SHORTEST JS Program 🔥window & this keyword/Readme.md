@@ -101,7 +101,7 @@ obj.greet(); // Output: "Charlie"
 
 ## ✅ **What is `this` in JavaScript — Simple Definition**
 
-> **`this` refers to the object that is currently calling the function.**
+> **`this` keyword refers to the object that is currently calling the function.**
 
 
 ## Q.Explain how this works in js / What is this keyword and how to implement it ?
@@ -261,6 +261,21 @@ personIntro.call(person, 'Los Angeles', 'California'); // Output: Max is from Lo
 apply()
 
 - The apply() method calls a function with a given this value, and arguments provided as an array (or an array-like object).
+
+```js
+function greet(city, country) {
+  console.log(`Hello, my name is ${this.name}. I live in ${city}, ${country}`);
+}
+
+const person = { name: "Moaz" };
+
+// Using call
+greet.call(person, "Delhi", "India");
+
+// Using apply (notice arguments are inside an array)
+greet.apply(person, ["Delhi", "India"]);
+
+```
 
 ```js
 function sum(num1, num2) {
