@@ -1,3 +1,5 @@
+// Suneja Version
+
 // let counter = 0;
 // function getData(){
 //     console.log("fetching Data" + counter++);
@@ -8,7 +10,7 @@
     
 //     return function (...args) {
 //        if(timer) clearTimeout(timer);
-//        setTimeout(()=>{
+//        timer = setTimeout(()=>{
 //         call();
 //        },duration) 
 //     }
@@ -18,6 +20,8 @@
 
 // const debouncedFunction = myDebounce(getData,1000);
 
+
+// GPT Version
 
 let counter = 0;
 
@@ -36,4 +40,4 @@ function myDebounce(call, duration) {
     }
 }
 
-const debouncedFunction = myDebounce(getData, 1000);
+const debouncedFunction = myDebounce(getData, 500);

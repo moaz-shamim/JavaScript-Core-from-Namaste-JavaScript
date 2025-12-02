@@ -45,7 +45,6 @@
 
 // console.log("end");
 
-
 // function sayHello() {
 //     console.log(this.hello);
 //     var response = 'general kenobi!';
@@ -56,7 +55,6 @@
 // var hello = 'hello there!';
 // global.hello = 'hello there!'; // uncomment this line if using node
 // sayHello();
-
 
 // function sayHello() {
 //     console.log(hello);
@@ -79,7 +77,7 @@
 // sayHello();
 
 function showThis() {
-  console.log(this);
+	console.log(this);
 }
 
 showThis(); // In non-strict mode: Window (global object). In strict mode: undefined.
